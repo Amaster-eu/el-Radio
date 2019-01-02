@@ -1,0 +1,29 @@
+{
+  "name": "radio-electron",
+  "productName": "Radio Electron",
+  "version": "0.0.1",
+  "main": "app/main.js",
+  "scripts": {
+    "start": "electron app/main.js",
+    "osx": "electron-packager . 'Radio Electron' --platform=darwin --arch=x64 --out=build/osx --overwrite=true --prune=true --icon=assets/icons/logo.icns && electron-installer-dmg \"build/osx/Radio Electron-darwin-x64/Radio Electron.app\" \"radio-electron\" --out=build/osx --overwrite --icon=assets/icons/logo.icns",
+    "win": "electron-packager . \"radio-electron\" --platform=win32 --arch=x64 --out=build/win --overwrite --prune=true --icon=\"assets/icons/logo.ico\" --version-string.ProductName='Radio Electron' --app-version=%npm_package_version% --asar && electron-installer-windows --src build/win/radio-electron-win32-x64/ --dest build/win/",
+    "linux": "electron-packager . \"radio-electron\" --platform=linux --arch=x64 --out=build/linux --overwrite --prune=true --icon=\"assets/icons/logo.ico\" --version-string.ProductName='Radio Electron' --app-version=%npm_package_version% --asar && electron-installer-debian --src build/linux/radio-electron-linux-x64/ --arch amd64 --config config.json"
+  },
+  "devDependencies": {
+    "electron": "^4.0.0",
+    "electron-installer-debian": "^1.0.1",
+    "electron-installer-dmg": "^2.0.0",
+    "electron-installer-windows": "^1.1.0",
+    "electron-packager": "^13.0.1"
+  },
+  "author": "Amaster",
+  "license": "MIT",
+  "keywords": [
+    "radio",
+    "music",
+    "media",
+    "player",
+    "desktop",
+    "electron"
+  ]
+}

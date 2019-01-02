@@ -1,0 +1,105 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Electron: Radio FM</title>
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<section>
+  <video loop muted poster="../assets/images/home.jpg" class="video">
+    <source src="../assets/video/home.mp4" type="video/mp4">
+    <source src="../assets/video/home.webm" type="video/webm">
+    <source src="../assets/video/home.ogv" type="video/ogg">
+  </video>
+</section>
+
+<main>
+  <header>
+    <div class="info">
+      <span>Streaming content</span>
+      <span>128 kbps</span>
+      <span>44.1 kHz</span>
+      <span>Stereo</span>
+    </div>
+    <div class="title">
+      <div class="location">Austria, Vienna</div>
+      <div class="h1">Arabella 90s</div>
+    </div>
+  </header>
+
+  <div class="controls">
+    <div class="buttons">
+      <button class="button-more"></button>
+    </div>
+
+    <div class="buttons">
+      <button class="button-previous"></button>
+      <button class="button-play"></button>
+      <button class="button-next"></button>
+    </div>
+
+    <div class="buttons">
+      <div class="icon-volume volume-high"></div>
+      <div class="progress-volume-outer">
+        <div class="progress-volume-inner"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="stations">
+    <ul class="ul">
+      <li data-url="http://arabella.stream.kapper.net:8004/arabella90s"
+          data-title="Arabella 90s"
+          data-location="Austria, Vienna"
+          class="station">
+        <div class="icon-sound">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </li>
+      <li data-url="http://rs32.stream24.net/arabella-rock.mp3"
+          data-title="Arabella Rock"
+          data-location="Germany, Munich"
+          class="station"></li>
+      <li data-url="http://naxos.cdnstream.com/1366_128"
+          data-title="Dance Mix"
+          data-location="USA"
+          class="station"></li>
+      <li data-url="http://icy-e-ba-01-gos.sharp-stream.com/kissnational.mp3"
+          data-title="KISS FM UK"
+          data-location="UK, England, London, 100 FM"
+          class="station"></li>
+      <li data-url="http://cast.radiogroup.com.ua:8000/nashe"
+          data-title="Наше радио"
+          data-location="Ukraine, Kiev, 107.9 FM"
+          class="station"></li>
+      <li data-url="http://air.radiorecord.ru:805/rr_320"
+          data-title="Радио Рекорд"
+          data-location="Russia, St. Petersburg, 106.3 FM"
+          class="station"></li>
+      <li data-url="http://ep256.hostingradio.ru:8052/europaplus256.mp3"
+          data-title="Европа плюс"
+          data-location="Russia, Moscow, 106.2 FM"
+          class="station"></li>
+      <li data-url="http://ic2.101.ru:8000/v3_1"
+          data-title="Авторадио"
+          data-location="Russia, Moscow, 90.3 FM"
+          class="station"></li>
+      <li data-url="http://ic2.101.ru:8000/v1_1"
+          data-title="Energy (NRJ)"
+          data-location="Russia, Moscow, 104.2 FM"
+          class="station"></li>
+    </ul>
+  </div>
+</main>
+
+<script src="js/radio.js"></script>
+</body>
+</html>

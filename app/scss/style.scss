@@ -1,0 +1,357 @@
+html, body {
+  overflow: hidden;
+  margin: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  position: relative;
+  touch-action: none;
+}
+
+body {
+  color: #ffffff;
+  font: 400 normal 12px sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #202020;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #8a8a8a;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ccc;
+}
+
+section {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #14151a;
+
+  @media (min-width: 720px) {
+    background-color: transparent;
+  }
+
+  .video {
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    bottom: 0;
+    left: 50%;
+    overflow: hidden;
+    width: auto;
+    min-width: 100%;
+    max-width: none;
+    height: auto;
+    min-height: 100%;
+    padding: 0;
+    object-fit: contain;
+    transform: translate(-50%, -50%);
+  }
+}
+
+main {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  background-color: #282828;
+
+  @media (min-width: 400px) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 400px;
+    height: unset;
+    border: 1px solid #434242;
+    border-radius: 6px;
+  }
+
+  @media (min-width: 720px) {
+    left: 16px;
+    transform: translate(0, -50%);
+    background-color: rgba(40, 40, 40, 0.9);
+  }
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  height: 90px;
+  background: linear-gradient(to bottom, #4c4c4c 0%, #333333 100%);
+  border-bottom: 1px solid #ff5300;
+
+  @media (min-width: 720px) {
+    background: linear-gradient(to bottom, rgba(76, 76, 76, 0.3) 0%, rgba(51, 51, 51, 0.6) 100%);
+  }
+
+  .info {
+    color: #b6b6b6;
+    padding: 10px;
+    text-shadow: 0 -1px black;
+
+    span:after {
+      content: '|';
+      display: inline-block;
+      margin: 0 10px;
+      color: #202020;
+    }
+
+    span:last-child:after {
+      display: none;
+    }
+  }
+
+  .title {
+    position: relative;
+    padding: 10px;
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 8px;
+      left: 10px;
+      background: url('../../assets/icons/radio.svg') center center no-repeat;
+      background-size: 40px;
+      width: 40px;
+      height: 40px;
+    }
+
+    .location {
+      color: #b6b6b6;
+      margin-left: 50px;
+      text-shadow: 0 -1px black;
+    }
+
+    .h1 {
+      font-size: 18px;
+      margin-left: 50px;
+    }
+  }
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #333333;
+  padding: 16px;
+
+  @media (min-width: 720px) {
+    background-color: rgba(51, 51, 51, 0.6);
+  }
+
+  .buttons {
+    display: flex;
+    align-items: center;
+
+    .button-more {
+      outline: none;
+      border: none;
+      background-size: 20px;
+      width: 20px;
+      height: 20px;
+      background: url('../../assets/icons/more.svg') center center no-repeat;
+      cursor: pointer;
+    }
+
+    .button-play,
+    .button-pause {
+      margin: 0 30px;
+      outline: none;
+      border: none;
+      background: url('../../assets/icons/play.svg') center center no-repeat;
+      background-size: 20px;
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+    }
+
+    .button-pause {
+      background: url('../../assets/icons/pause.svg') center center no-repeat;
+    }
+
+    .button-previous,
+    .button-next {
+      outline: none;
+      border: none;
+      background: url('../../assets/icons/previous.svg') center center no-repeat;
+      background-size: 16px;
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
+    }
+
+    .button-next {
+      background: url('../../assets/icons/next.svg') center center no-repeat;
+    }
+  }
+
+  .icon-volume {
+    display: inline-block;
+    margin-right: 6px;
+    outline: none;
+    border: none;
+    background-size: 20px;
+    width: 20px;
+    height: 20px;
+    background: url('../../assets/icons/volume-off.svg') center center no-repeat;
+  }
+
+  .volume-mute {
+    background: url('../../assets/icons/volume-mute.svg') center center no-repeat;
+  }
+
+  .volume-low {
+    background: url('../../assets/icons/volume-low.svg') center center no-repeat;
+  }
+
+  .volume-high {
+    background: url('../../assets/icons/volume-high.svg') center center no-repeat;
+  }
+
+  .progress-volume-outer {
+    position: relative;
+    width: 100px;
+    height: 20px;
+    background-color: transparent;
+    cursor: pointer;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 10px;
+      width: 100px;
+      height: 1px;
+      background-color: #202020;
+    }
+
+    .progress-volume-inner {
+      width: 80px;
+      height: 1px;
+      position: absolute;
+      top: 10px;
+      background-color: white;
+    }
+  }
+}
+
+.stations {
+  height: calc(100vh - 143px);
+  overflow-y: auto;
+
+  @media (min-width: 720px) {
+    height: 100%;
+    max-height: 300px;
+  }
+
+  .ul {
+    padding: 0;
+    margin: 0 16px;
+    list-style-type: none;
+  }
+
+  .station {
+    position: relative;
+    padding: 16px;
+    color: #8a8a8a;
+    border-bottom: 1px solid #343434;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.4s;
+
+    &:before {
+      content: attr(data-title);
+      display: inline-flex;
+      margin-right: 8px;
+      color: #fff;
+      font-weight: bold;
+      user-select: none;
+    }
+
+    &:after {
+      content: attr(data-location);
+      display: inline-flex;
+    }
+
+    &:first-child {
+      margin-top: 16px;
+    }
+
+    &:last-child {
+      border: none;
+      margin-bottom: 16px;
+    }
+
+
+    &.active {
+      background-color: #ffffff;
+
+      &:before {
+        color: #282828;
+      }
+    }
+
+    .icon-sound {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 14px;
+      height: 16px;
+      margin: 14px;
+      opacity: 0;
+      visibility: hidden;
+      transition: visibility 0s, opacity 0.4s linear 0.5s;
+      z-index: 1;
+
+      & > span {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 2px;
+        height: 15px;
+        background: #ff5300;
+
+        &:nth-child(2) {
+          left: 4px;
+          height: 13px;
+        }
+
+        &:nth-child(3) {
+          left: 8px;
+          height: 16px;
+        }
+
+        &:nth-child(4) {
+          left: 12px;
+          height: 16px;
+        }
+      }
+    }
+
+    &.playing .icon-sound {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+
+.mini {
+  .stations {
+    display: none;
+  }
+}

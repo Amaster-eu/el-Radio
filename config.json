@@ -1,0 +1,14 @@
+{
+    "userDataDir": "el-Radio",
+    "name": "radio-electron",
+    "productName": "Radio Electron",
+    "dest": "build/linux/",
+    "icon": "assets/icons/logo.ico",
+    "categories": [
+        "Audio"
+    ],
+    "lintianOverrides": [
+        "changelog-file-missing-in-native-package"
+    ],
+    "bin": "radio-electron"
+  }
