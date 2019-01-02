@@ -1,6 +1,6 @@
 # Electron: Radio FM
 
-![ScreenShot](demo/ScreenShot.png)
+![ScreenShot](demo/radio.gif)
 
 ## Installation
 
