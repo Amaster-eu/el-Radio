@@ -1,4 +1,4 @@
-# Electron: Radio FM
+# ![alt-text](demo/electron.png) Electron: Radio FM
 
 A simple cross-platform [Electron](https://electronjs.org/) app for listening to FM radio
 
